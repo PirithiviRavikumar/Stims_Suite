@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>PayRollMagement</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+<script type="salary.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+
+</head>
+<script type="text/javascript">
+	 function StopPayment() {
+            document.getElementById('StopPayment').style.display = "inline";
+        }
+</script>
+<body ng-app="myApp">
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<ul class="nav nav-tabs">
+				<li>
+					<a href="#">Home</a>
+				</li>
+				<li>
+					<a href="#">Employee</a>
+				</li>
+				<li class="dropdown">
+					 <a href="#" data-toggle="dropdown" class="dropdown-toggle">PayRoll<strong class="caret"></strong></a>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="SalaryCalculation.html" >SalaryCalculation</a>
+						</li>
+						<li>
+							<a href="#" onclick="StopPayment()">StopPayment</a>
+						</li>
+						<li>
+							<a href="Final_Settelment_nev.html">FinalSettelment</a>
+						</li>
+						
+						<li>
+							<a href="RES_nev.html">Revised Employee Salary</a>
+						</li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					 <a href="#" data-toggle="dropdown" class="dropdown-toggle">Report<strong class="caret"></strong></a>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="PaySlip_nev.html">Payslip</a>
+						</li>
+						<li>
+							<a href="ConsolidatedStatement_nev.html">ConsolidatedStatement</a>
+						</li>
+						<li>
+							<a href="#">Memo</a>
+						</li>
+						
+						<li>
+							<a href="#">Letter</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<div id="StopPayment">
+        <script type="text/javascript">
+           function StopPay(){
+             document.getElementById('sp').style.display="inline";
+                  }
+        </script>
+       <style type="text/css">
+             
+            
+               table {
+             width: 100%;
+             border-top: 1px solid #ddd;
+             border-bottom: 1px solid #ddd;
+             border-left: 1px solid #ddd;
+             border-right: 1px solid #ddd;
+         }
+
+          td,  th {
+           padding: 10px;
+          }
+
+     td:first-child, th:first-child {
+  padding-left: 20px;
+}
+ th{
+    text-align: left;
+   padding-left: 10px
+   padding-left:  10px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  
+}
+h2,h3
+{
+  text-align:center;
+}
+</style>	
+<div id="legend">
+<legend class="text-primary"><h1>Stop Payment</h1>
+</legend>
+    <div class="main-container">
+    <div class="row gutter">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+    <div class="panel">                       
+    <div class="panel-body">
+    <form id="defaultForm" method="post" action="" class="form-horizontal">
+    <fieldset>
+    <div class="form-group row gutter">
+    <h2>
+  <img src="x.jpg" class="img-circle pull-mid" width="100" height="100">Stop Payment </h2>
+  <label class="col-lg-6 control-label">Employee ID:</label>
+ <div class="col-lg-6"><input type="text" class="form-control" name="" placeholder=""></div>
+  </div>
+  <div class="form-group row gutter">
+   <label class="col-lg-6 control-label">Reason For Stopping Payment:</label>
+<div class="col-lg-6">
+<select class="form-control" id="Grade" placeholder="Select">
+      <option>Non-Porformance</option>
+      <option>irrugular attendance</option>
+      <option>Attitude</option>
+      
+      </select>
+</div>
+</div>
+ </fieldset>
+<div class="form-group row gutter">
+<div class="col-lg-6 col-lg-offset-6"><input type="button"  class="btn btn-primary"  onclick="StopPay()" value="Proceed" /></div>
+</div>
+</form>
+</div>
+</div>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+<div id="sp" style="display: none">  
+<div class="panel">
+
+<div class="panel-body">
+<form id="defaultForm" method="post" class="form-horizontal">
+<fieldset>
+
+<table style="text-align: left;">
+<thead>
+<h3>StopPayment</h3>
+<tr></tr>
+<tr></tr>
+<tr><th colspan="4">
+  Empolyee Details
+</th></tr>
+<tr><td id="td01">Date of Joining:</td>
+<td id="td02">06.3.2014</td>
+<td id="td03">Designation:</td>
+<td id="td04">Staff:</td>
+</tr>
+<tr>
+<td>PayRoll Month:</td>
+<td id="td01">Feb 2017</td>
+<td id="td02">Grade</td>
+<td id="td03">B</td>
+</tr>
+</thead>
+</table></div>
+</fieldset>
+</div>                            
+<div class="form-group no-margin">
+<div class="row gutter">
+<div class="col-md-6"></div>
+<div class="col-md-2"><button type="submit" class="btn btn-primary">Save</button></div>
+<div class="col-md-3"><button type="submit" class="btn btn-primary">Cancel</button></div>
+</div>
+</div>
+                              
+</form>
+</div>
+</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </body>
+ </html>

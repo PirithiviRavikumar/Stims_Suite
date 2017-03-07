@@ -47,6 +47,20 @@ Registration Form
     }
 
   }
+  function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah')
+                    .attr('src', e.target.result)
+                    .width(200)
+                    .height(180);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
 </script>
 
   <style type="text/css">
@@ -164,7 +178,22 @@ td {
 { 
   text-shadow: 0 0px 0 #FAE;
 }
-
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
   </style>
    
 
@@ -238,14 +267,20 @@ td {
 	
 		                            <td>
 		
-			                            <img src="no-image.jpg" class="img-responsive img-rounded" >
+			                             <img id="blah" src="no-image.jpg" class="img-responsive img-rounded" style="width:200px;height: 180px;">
+    
 		
 		                            </td>
 	
 	                            </tr>
 	                            <tr>
 	                                <td>
-	                                    <input class="btn btn-primary " type="button" value="Choose Photo">
+	                                    <button class="fileUpload btn btn-primary">
+                                  <span>Choose Photo</span>
+                                     <input type='file' class="upload" onchange="readURL(this);" />
+  
+                                        <img id="blah"   />
+                                        </button>
 
 	
 	                                <td>
@@ -343,7 +378,7 @@ td {
                                 
                            
                                 <td>
-                                    <select id="school" name="school" class="form-control" onchange="if (this.selectedIndex==1){this.form['admission'].style.visibility='visible'}else {this.form['admission'].style.visibility='hidden'}if (this.selectedIndex==2){this.form['schoolname1'].style.visibility='visible'}else {this.form['schoolname1'].style.visibility='hidden'};"  >
+                                    <select id="school" name="school" class="form-control" onchange="if (this.selectedIndex==1){this.form['admission4'].style.visibility='visible'}else {this.form['admission4'].style.visibility='hidden'}if (this.selectedIndex==2){this.form['schoolname4'].style.visibility='visible'}else {this.form['schoolname4'].style.visibility='hidden'};"  >
                                         <option value="" selected="selected">School </option>
                            
                                         <option value="yes1" >Same School</option>
@@ -358,14 +393,14 @@ td {
 
                                 <td>
 
-                                  <input type="text" name="admission" id="admission" class="form-control " placeholder="Admission Number" style="visibility:hidden;" >
+                                  <input type="text" name="admission4" id="admission" class="form-control " placeholder="Admission Number" style="visibility:hidden;" >
                                     
 
 
                                 </td>
                            
                             <td>
-                                <input type="text" name="schoolname1" id="schoolname" class="form-control " placeholder="School Name" style="visibility:hidden;" >
+                                <input type="text" name="schoolname4" id="schoolname" class="form-control " placeholder="School Name" style="visibility:hidden;" >
 
                             </td>
                             </tr>
@@ -430,7 +465,7 @@ td {
                                 
                            
                                 <td>
-                                    <select id="school" name="school" class="form-control" onchange="if (this.selectedIndex==1){this.form['admission'].style.visibility='visible'}else {this.form['admission'].style.visibility='hidden'}if (this.selectedIndex==2){this.form['schoolname1'].style.visibility='visible'}else {this.form['schoolname1'].style.visibility='hidden'};"  >
+                                    <select id="school" name="school" class="form-control" onchange="if (this.selectedIndex==1){this.form['admission2'].style.visibility='visible'}else {this.form['admission2'].style.visibility='hidden'}if (this.selectedIndex==2){this.form['schoolname2'].style.visibility='visible'}else {this.form['schoolname2'].style.visibility='hidden'};"  >
                                         <option value="" selected="selected">School </option>
                            
                                         <option value="yes1" >Same School</option>
@@ -445,14 +480,14 @@ td {
 
                                 <td>
 
-                                  <input type="text" name="admission" id="admission" class="form-control " placeholder="Admission Number" style="visibility:hidden;" >
+                                  <input type="text" name="admission2" id="admission" class="form-control " placeholder="Admission Number" style="visibility:hidden;" >
                                     
 
 
                                 </td>
                            
                             <td>
-                                <input type="text" name="schoolname1" id="schoolname" class="form-control " placeholder="School Name" style="visibility:hidden;" >
+                                <input type="text" name="schoolname2" id="schoolname" class="form-control " placeholder="School Name" style="visibility:hidden;" >
 
                             </td>
                             </tr>
@@ -517,7 +552,7 @@ td {
                                 
                            
                                 <td>
-                                    <select id="school" name="school" class="form-control" onchange="if (this.selectedIndex==1){this.form['admission'].style.visibility='visible'}else {this.form['admission'].style.visibility='hidden'}if (this.selectedIndex==2){this.form['schoolname1'].style.visibility='visible'}else {this.form['schoolname1'].style.visibility='hidden'};"  >
+                                    <select id="school" name="school" class="form-control" onchange="if (this.selectedIndex==1){this.form['admission3'].style.visibility='visible'}else {this.form['admission3'].style.visibility='hidden'}if (this.selectedIndex==2){this.form['schoolname3'].style.visibility='visible'}else {this.form['schoolname3'].style.visibility='hidden'};"  >
                                         <option value="" selected="selected">School </option>
                            
                                         <option value="yes1" >Same School</option>
@@ -532,14 +567,14 @@ td {
 
                                 <td>
 
-                                  <input type="text" name="admission" id="admission" class="form-control " placeholder="Admission Number" style="visibility:hidden;" >
+                                  <input type="text" name="admission3" id="admission" class="form-control " placeholder="Admission Number" style="visibility:hidden;" >
                                     
 
 
                                 </td>
                            
                             <td>
-                                <input type="text" name="schoolname1" id="schoolname" class="form-control " placeholder="School Name" style="visibility:hidden;" >
+                                <input type="text" name="schoolname3" id="schoolname" class="form-control " placeholder="School Name" style="visibility:hidden;" >
 
                             </td>
                             </tr>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>PayRollMagement</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+<script type="salary.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+
+</head>
+<style type="text/css">
+
+ .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 20%
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+     }
+  .container {
+    padding: 2px 16px;
+    }
+img
+{
+  padding-right: 2px;
+  text-align:center;
+  float: center;
+}
+
+.panel-default {
+    margin-top: 10%;
+    margin-left:400px;
+    width: 50%;
+ }
+ .form-horizontal .control-label {
+    padding-top: 10px;
+    margin-bottom: 0px;
+    text-align: right;
+} 
+
+  .container  {
+  text-align: left;
+  overflow: hidden;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.container td, .container th {
+  padding: 10px;
+}
+
+.container td:first-child, .container th:first-child {
+  padding-left: 20px;
+}
+.container th{
+    text-align: left;
+   padding-left: 10px
+   padding-left:  10px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  
+}
+.container h2,h3
+{
+  text-align:center;
+}
+
+</style>
+<body ng-app="myApp">
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<ul class="nav nav-tabs">
+				<li>
+					<a href="#">Home</a>
+				</li>
+				<li>
+					<a href="#">Employee</a>
+				</li>
+				<li class="dropdown">
+					 <a href="#" data-toggle="dropdown" class="dropdown-toggle">PayRoll<strong class="caret"></strong></a>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="SalaryCalculation.html" >SalaryCalculation</a>
+						</li>
+						<li>
+							<a href="StopPayment_nev.html">StopPayment</a>
+						</li>
+						<li>
+							<a href="Final_Settelment_nev.html">FinalSettelment</a>
+						</li>
+						
+						<li>
+							<a href="RES_nev.html">Revised Employee Salary</a>
+						</li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					 <a href="#" data-toggle="dropdown" class="dropdown-toggle">Report<strong class="caret"></strong></a>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="PaySlip_nev.html">Payslip</a>
+						</li>
+						<li>
+							<a href="ConsolidatedStatement_nev.html">ConsolidatedStatement</a>
+						</li>
+						<li>
+							<a href="#">Memo</a>
+						</li>
+						
+						<li>
+							<a href="#">Letter</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<div id="EmployeeCard">
+        <div class="card">
+  <img src="x.jpg" style="width:30%; margin-left:70px;">
+  </img>
+<div class="container">
+  <h4 style="margin-left:50px;">Employee Name
+   <br>Employee ID
+   <br>400000
+  </h4>
+<table>
+   <thead>
+   <tr>
+   <td>Desingation:</td>
+   <td>HOD</td>
+   </tr>
+   <tr>
+   <td>Basic Salary:</td>
+   <td>40,000</td>
+   </tr>
+<tr>
+  <td>ExtraDays</td>
+  <td>5</td>
+</tr>
+<tr>
+  <td>Attendance</td>
+  <td>100%</td>
+</tr>
+<tr>
+  <td>Decation</td>
+  <td>500</td>
+</tr>
+<tr>
+  <td>Status</td>
+  <td>Completed</td>
+</tr>
+ </thead>
+</table>
+  </div>
+</div>
+ </body>
+ </html>

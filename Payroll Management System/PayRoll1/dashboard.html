@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>PAYROLL</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600"
+        rel="stylesheet">
+<link href="css/font-awesome.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/pages/dashboard.css" rel="stylesheet">
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
+                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a class="brand" href="index.html">Pay Roll</a>
+      <div class="nav-collapse">
+        <ul class="nav pull-right">
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                            class="icon-cog"></i> Account <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="javascript:;">Settings</a></li>
+              <li><a href="javascript:;">Help</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                            class="icon-user"></i> Pirithivi <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="javascript:;">Profile</a></li>
+              <li><a href="login.html">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!--/.nav-collapse --> 
+    </div>
+    <!-- /container --> 
+  </div>
+  <!-- /navbar-inner --> 
+</div>
+<!-- /navbar -->
+<div class="subnavbar">
+  <div class="subnavbar-inner">
+    <div class="container">
+      <ul class="mainnav">
+        <li class="active"><a href="#"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
+        <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i><span>Employee</span> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+          <li><a href="empsrc.html">View Employee</a></li>
+            <li><a href="search.html">Search Employee</a></li>
+            <li><a href="seperate.html">Seprate Employee</a></li>
+            
+          </ul>
+        </li>
+         <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-money"></i><span>PayRoll</span> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="SalaryCalculation_nev.html">Salary Calculation</a></li>
+            <li><a href="StopPayment_json.html">Stop Payment</a></li>
+            <li><a href="Final_Settelment_nev.html">Final Settelement</a></li>
+            <li><a href="RES_nev.html">Revise Employee Salary</a></li>
+          </ul>
+        </li>
+         <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-list-alt"></i><span>Report</span> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="payslip_nev.html">PaySlip</a></li>
+            <li><a href="consolidatestamt.html">Consolidated  Statement</a></li>
+            <li><a href="newmemo.html">Memo</a></li>
+            <li><a href="newletter.html">Letter</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- /container --> 
+  </div>
+  <!-- /subnavbar-inner --> 
+</div>
+<!-- /subnavbar -->
+
+
+
+
+
+
+<div class="main">
+  <div class="main-inner">
+    <div class="container">
+      <div class="row">
+        <div class="span4">
+          <div class="widget widget-nopad">
+            <div class="widget-header"> 
+            <i class="icon-user"></i>
+                              <h3>
+                                 Empolyee</h3>
+            </div>
+            <!-- /widget-header -->
+         
+              <div class="widget big-stats-container">
+              <p style="text-align: center;">Garde Component</p>
+
+                <a href="#" data-target="#myModal"  data-toggle="modal" title="Grade Component">
+                  <canvas id="donut-chart" class="chart-holder" width="500" height="220" style=" margin-top:30px;margin-left: -81px";>
+                            </canvas>
+
+                            <input type="button"  class="btn btn-primary" style="background-color:  #F7464A; 
+                            width:71px; text-align: left;"  title="Grade A 15" value=" Grade A" />
+                             <input type="button"  class="btn btn-primary" style="background-color:  #46BFBD; 
+                            width:71px; text-align: left;"  title="Grade B 20" value="Grade B" />
+                            <input type="button"  class="btn btn-primary" style="background-color:  #FDB45C; 
+                            width:71px; text-align: left;"  title="Grade C 43" value="Grade C" />
+                            <input type="button"  class="btn btn-primary" style="background-color:  #949FB1; 
+                            width:71px; text-align: left;"  title="Grade D 32" value="Grade D" />
+                            <input type="button"  class="btn btn-primary" style="background-color:  #4D5360; 
+                            width:71px; text-align: left;"  title="Grade E 20" value="Grade E" />
+                </a>
+
+                         
+                
+              </div>
+              
+            </div>
+            <div class="shortcuts"> <a href="search.html" class="shortcut">
+                          <i class="shortcut-icon  icon-search"></i><span
+                            class="shortcut-label">Search Employee</span> </a>
+                            <a href="seperate.html" class="shortcut">
+                            <i class="shortcut-icon  icon-cut"></i>
+                            <span class="shortcut-label">Seprate Employee</span> </a>
+                                                
+                          </div>
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+          <!-- Modal content-->
+             <div class="modal-content">
+               <div class="modal-header">
+                 <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Grade Component</h4>
+              </div>
+                 <div class="modal-body">
+                   <table>
+                       <td colspan="3">
+                            <div class="widget big-stats-container">
+                               <canvas id="donut-chart1" class="chart-holder" width="500" height="220" style=" margin-top:30px;margin-left: -133px";>
+                                </canvas>
+                            </div> 
+                       </td>
+                  <td>
+                   
+                        <input type="button"  class="btn btn-primary" style="background-color:  #F7464A" />
+                 
+                      <label class=" control-label" id="grade_A">Grade A</label> 
+                      
+                     
+                       <input type="button"  class="btn btn-primary" style="background-color:  #46BFBD" />
+                   
+                        <label class=" control-label" id="grade_B">Grade B</label> 
+                       
+                       
+                         <input type="button"  class="btn btn-primary" style="background-color:  #FDB45C " />
+                        <label class=" control-label" id="grade_C">Grade C</label>
+                        
+                        <input type="button"  class="btn btn-primary" style="background-color:  #949FB1 " />
+                        <label class=" control-label" id="grade_D">Grade D</label> 
+                         
+                         <input type="button"  class="btn btn-primary" style="background-color: #4D5360 " />
+                        <label class=" control-label" id="grade_E">Grade E</label>  
+                      
+                  </td>
+                </table>
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+</div>
+</div>
+
+
+
+           
+
+
+          <div class="widget">
+            
+            <!-- /widget-header -->
+            <div class="widget-content">
+               <div id="big_stats" class="">
+               <a href="empsrc.html">
+                    <div class="stat"> <i class="icon-user"></i> <span class="value">employee</span> </div>
+                    <!-- .stat -->
+                    
+                    <div class="stat"><h3> View All Employee Details</h3> </div>
+                    </a>
+                    <!-- .stat -->
+                 
+                    <!-- .stat --> 
+                  
+                </div>
+            </div>
+            <!-- /widget-content --> 
+          </div>
+          <!-- /widget --> 
+        </div>
+
+
+
+        <!-- /span6 -->
+        <div class="span4">
+          <div class="widget">
+            <div class="widget-header"> <i class="icon-money"></i>
+              <h3>Pay Roll</h3>
+            </div>
+            <!-- /widget-header -->
+           
+              <div class="shortcuts"> <a href="SalaryCalculation_nev.html" class="shortcut">
+              <i class="shortcut-icon icon- icon-calendar"></i><span
+                                        class="shortcut-label">Salary Calculation</span> </a><a href="StopPayment_json.html" class="shortcut"><i
+                                            class="shortcut-icon icon-remove-sign"></i><span class="shortcut-label">Stop Payment</span> </a> 
+                                            <a href="Final_Settelment_nev.html" class="shortcut"><i class="shortcut-icon icon-rupee"></i><span
+                                        class="shortcut-label">Final Settlement</span> </a><a href="RES_nev.html" class="shortcut"><i
+                                            class="shortcut-icon icon-copy"></i><span class="shortcut-label">Revise Employee Salary</span> </a>
+
+
+                                            
+              <!-- /shortcuts --> 
+            </div>
+            <!-- /widget-content --> 
+          </div>
+          <!-- /widget -->
+          <div class="widget">
+           
+            <!-- /widget-header -->
+            <div class="widget-content">
+                 <a href="#" data-target="#myModal2"  data-toggle="modal" title="Payroll Summary" style="text-decoration: none;">
+                    <p style="text-align: center;">Payroll Summary</p>
+              <canvas id="bar-chart" class="chart-holder" width="416" height="220" style=" margin-top:-4px;margin-left:7px">
+                                </canvas>
+
+                                </a>
+              <!-- /area-chart --> 
+            </div>
+            <!-- /widget-content --> 
+          </div>
+          <!-- /widget -->
+          
+          
+          <!-- /widget -->
+        </div>
+        <!-- /span6 --> 
+<div class="modal fade" id="myModal2" role="dialog">
+          <div class="modal-dialog">
+          <!-- Modal content-->
+             <div class="modal-content">
+               <div class="modal-header">
+                 <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Payroll Summary</h4>
+              </div>
+                 <div class="modal-body">
+                   <table>
+                       <td colspan="3">
+                            <div class="widget big-stats-container">
+                               
+              <canvas id="bar-chart1" class="chart-holder" width="500" height="220" style=" margin-top:-4px;margin-left: -48px">
+                                </canvas>
+                            </div> 
+                       </td>
+                  <td>
+                   
+                       <input type="button"  class="btn btn-primary" style="background-color:  #d9e6f2" />
+                 
+                      <label class=" control-label" id="grade_A">Cross Salary</label> 
+                      
+                     
+                       <input type="button"  class="btn btn-primary" style="background-color:  #ffffff" />
+                   
+                        <label class=" control-label" id="grade_A">Net Salary</label>  
+                      
+                  </td>
+                </table>
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+        <div class="span4">
+          <div class="widget widget-nopad">
+            <div class="widget-header"> <i class="icon-list-alt"></i>
+              <h3>Report</h3>
+            </div>
+            <!-- /widget-header -->
+            
+              <div class="widget big-stats-container">
+                <div class="shortcuts"> <a href="payslip_nev.html" class="shortcut">
+                          <i class="shortcut-icon icon-file"></i><span
+                            class="shortcut-label">PaySlip</span> </a>
+                            <a href="consolidatestamt.html" class="shortcut">
+                            <i class="shortcut-icon  icon-book"></i>
+                            <span class="shortcut-label">Consolidated  Statement</span> </a>
+                                                
+                          </div>
+                <!-- /widget-content --> 
+             
+            </div>
+          </div>
+          <!-- /widget -->
+          <div class="widget">
+                            
+                     <p style="text-align: center;">Report Status</p>        <!-- /widget-header -->
+                    <a href="#" data-target="#myModal1"  data-toggle="modal" title="Report Status">
+                         <canvas id="donut-chart2" class="chart-holder" width="500" height="220" style=" margin-top:30px;margin-left: -58px";>
+                            </canvas>
+                  
+                    <input type="button"  class="btn btn-primary" style="background-color:  #F7464A; 
+                            width:86px; text-align: left;margin-left: 60px;"  title="4 Employee Appointed" value=" Appointed" />
+                             <input type="button"  class="btn btn-primary" style="background-color:  #46BFBD; 
+                            width:80px; text-align: left;"  title="3 Employee Resinged" value="Resinged" />
+                            <input type="button"  class="btn btn-primary" style="background-color:  #4D5360; 
+                            width:71px; text-align: left;"  title=" 2 employee  getting MEMO" value="MEMO" />
+                                <!-- /pie-chart -->
+                          </a>
+
+                            <!-- /widget-content -->
+             <div class="widget big-stats-container">
+                <div class="shortcuts"> <a href="newmemo.html" class="shortcut">
+                    <i class="shortcut-icon  icon-edit"></i><span
+                            class="shortcut-label">Memo</span> </a>
+                    <a href="newletter.html" class="shortcut">
+                       <i class="shortcut-icon icon-paste"></i>
+                        <span class="shortcut-label">Letter</span> </a>
+                                                
+                </div>
+                <!-- /widget-content --> 
+                 
+              </div>
+            </div>          
+        </div>
+ <div class="modal fade" id="myModal1" role="dialog">
+          <div class="modal-dialog">
+          <!-- Modal content-->
+             <div class="modal-content">
+               <div class="modal-header">
+                 <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Report Status</h4>
+              </div>
+                 <div class="modal-body">
+                   <table>
+                       <td colspan="3">
+                            <div class="widget big-stats-container">
+                               <canvas id="donut-chart3" class="chart-holder" width="500" height="220" style=" margin-top:30px;margin-left: -81px";>
+                            </canvas>
+                            </div> 
+                       </td>
+                  <td>
+                   
+                       <input type="button"  class="btn btn-primary" style="background-color:  #F7464A" />
+                 
+                      <label class=" control-label" id="grade_A"> 4 Employee Appointed</label> 
+                      
+                     
+                       <input type="button"  class="btn btn-primary" style="background-color:  #46BFBD" />
+                   
+                        <label class=" control-label" id="grade_A"> 3 Employee Resinged</label> 
+              
+                         
+                         <input type="button"  class="btn btn-primary" style="background-color: #4D5360 " />
+                        <label class=" control-label" id="grade_A"> 2 employee  getting MEMO</label>  
+                      
+                  </td>
+                </table>
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+</div>
+</div>
+
+
+
+      <!-- /row --> 
+    </div>
+    <!-- /container --> 
+  </div>
+  <!-- /main-inner --> 
+</div>
+<!-- /main --><div class="footer">
+         
+        </div>
+ 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script src="js/jquery-1.7.2.min.js"></script> 
+<script src="js/excanvas.min.js"></script> 
+<script src="js/chart.min.js" type="text/javascript"></script> 
+<script src="js/bootstrap.js"></script>
+<script language="javascript" type="text/javascript" src="js/full-calendar/fullcalendar.min.js"></script>
+ 
+<script src="js/base.js"></script> 
+<script>    
+
+
+
+
+var doughnutData = [
+        {
+            value: 30,
+            color: "#F7464A",
+            indexLabel:"Grade A",
+
+        },
+        {
+            value: 50,
+            color: "#46BFBD",
+               indexLabel:"Grade B"
+        },
+        {
+            value: 100,
+            color: "#FDB45C",
+               indexLabel:"Grade C"
+        },
+        {
+            value: 40,
+            color: "#949FB1",
+               indexLabel:"Grade D"
+        },
+        {
+            value: 120,
+            color: "#4D5360",
+               indexLabel:"Grade E"
+        }
+
+      ];
+
+        var myDoughnut = new Chart(document.getElementById("donut-chart").getContext("2d")).Doughnut(doughnutData);
+        var doughnutData = [
+        {
+            value: 30,
+            color: "#F7464A"
+        },
+        {
+            value: 50,
+            color: "#46BFBD"
+        },
+        {
+            value: 100,
+            color: "#FDB45C"
+        },
+        {
+            value: 40,
+            color: "#949FB1"
+        },
+        {
+            value: 120,
+            color: "#4D5360"
+        }
+
+      ];
+  
+        var myDoughnut = new Chart(document.getElementById("donut-chart1").getContext("2d")).Doughnut(doughnutData);
+
+
+
+  var doughnutData = [
+        {
+            value: 40,
+            color: "#4D5360"
+        },
+        
+        
+        {
+            value: 60,
+            color:  "#46BFBD"
+        },
+        {
+            value: 70,
+            color: "#F7464A"
+        }
+
+      ];
+
+        var myDoughnut = new Chart(document.getElementById("donut-chart2").getContext("2d")).Doughnut(doughnutData);
+
+          var doughnutData = [
+        {
+            value: 40,
+            color: "#4D5360"
+        },
+        {
+            value: 60,
+            color: "#46BFBD"
+        },
+        {
+            value: 70,
+            color:  "#F7464A"
+        }
+
+      ];
+
+        var myDoughnut = new Chart(document.getElementById("donut-chart3").getContext("2d")).Doughnut(doughnutData);
+
+
+
+      var barChartData = {
+            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            datasets: [
+        {
+            fillColor: "rgba(220,220,220,0.5)",
+            strokeColor: "rgba(220,220,220,1)",
+            data: [65, 59, 90, 81, 56, 55, 40]
+        },
+        {
+            fillColor: "rgba(151,187,205,0.5)",
+            strokeColor: "rgba(151,187,205,1)",
+            data: [28, 48, 40, 19, 96, 27, 100]
+        }
+      ]
+
+        }
+
+var myLine = new Chart(document.getElementById("bar-chart").getContext("2d")).Bar(barChartData);
+
+               var barChartData = {
+            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            datasets: [
+        {
+            fillColor: "rgba(220,220,220,0.5)",
+            strokeColor: "rgba(220,220,220,1)",
+            data: [65, 59, 90, 81, 56, 55, 40]
+        },
+        {
+            fillColor: "rgba(151,187,205,0.5)",
+            strokeColor: "rgba(151,187,205,1)",
+            data: [28, 48, 40, 19, 96, 27, 100]
+        }
+      ]
+
+        }
+
+var myLine = new Chart(document.getElementById("bar-chart1").getContext("2d")).Bar(barChartData);
+    </script><!-- /Calendar -->
+</body>
+</html>

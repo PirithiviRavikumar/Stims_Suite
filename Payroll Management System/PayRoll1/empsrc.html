@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Employee</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
+    <script src="control1.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600"
+        rel="stylesheet">
+<link href="css/font-awesome.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/pages/dashboard.css" rel="stylesheet">
+<style type="text/css">
+          .card {
+
+        margin:25px 25px 25px 25px;
+        text-align: center;
+        font-weight: bold; 
+        color:white;
+        min-height:155px;
+        box-shadow: 0 8px 16px 0 rgba( 0,0,0,0.2);   
+        background-color:#ffffff;               
+        transition: 0.3s;
+        width: 150px;
+        border-radius: 15px;
+        backface-visibility:hidden;
+        padding: 0px;
+        position: relative;
+        overflow: hidden;
+      
+
+      }
+
+
+  .card img
+  {
+
+         z-index: 4;
+    }
+
+ .card .caption{
+
+          position:absolute;
+          top:170px;
+          -webkit-transition:all 0.3s ease-in-out;
+          -moz-transition:all 0.3s ease-in-out;
+          -o-transition:all 0.3s ease-in-out;
+          -ms-transition:all 0.3s ease-in-out;
+          transition:all 0.3s ease-in-out;
+          width:100%;
+
+    }
+         
+  .caption .blur
+  {
+          background-color: rgba(0,0,0,0.7);
+          height: 300px;
+          z-index: 5;
+          position: absolute;
+          width: 100%;
+    }
+       
+ .card .caption-text
+ {
+          z-index: 10;
+          color: #fff;
+          position: absolute;
+          height: 300px;
+          text-align: center;
+           color:white;
+          top:-1px;
+          width: 100%;
+
+   }
+
+   .ava{
+     margin: 32px 0px 7px 16px;
+     width:60px;
+     height: 60px;
+/*border-radius:450px 50px 500px 500px;*/
+   }
+#legend{
+  font-size:22px;
+  font-family: "sans serif";
+}
+</style>
+
+</head>
+<body ng-app="myApp">
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container"> 
+    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a>
+    <a class="brand" href="index.html">Pay Roll</a>
+      <div class="nav-collapse">
+        <ul class="nav pull-right">
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+           <i class="icon-cog"></i> Account <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="javascript:;">Settings</a></li>
+              <li><a href="javascript:;">Help</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+           <i class="icon-user"></i> Pirithivi <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="javascript:;">Profile</a></li>
+              <li><a href="login.html">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="navbar-search pull-right">
+          <input type="text" class="search-query" placeholder="Search">
+        </form>
+      </div>
+      <!--/.nav-collapse --> 
+    </div>
+    <!-- /container --> 
+  </div>
+  <!-- /navbar-inner --> 
+</div>
+<!-- /navbar -->
+<div class="subnavbar">
+  <div class="subnavbar-inner">
+    <div class="container">
+      <ul class="mainnav">
+        <li class=""><a href="dashboard.html"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
+        <li class="dropdown active"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i><span>Employee</span> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="search.html">Search Employee</a></li>
+            <li><a href="seperate.html">Seprate Employee</a></li>
+            <li><a href="empsrc.html">View Employee</a></li>
+          </ul>
+        </li>
+         <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-money"></i><span>PayRoll</span> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="icons.html">Salary Calculation</a></li>
+            <li><a href="faq.html">Stop Payment</a></li>
+            <li><a href="pricing.html">Final Settelement</a></li>
+            <li><a href="pricing.html">Revise Employee Salary</a></li>
+          </ul>
+        </li>
+         <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-list-alt"></i><span>Report</span> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="icons.html">PaySlip</a></li>
+            <li><a href="faq.html">Consolidated  Statement</a></li>
+            <li><a href="newmemo.html">Memo</a></li>
+            <li><a href="newletter.html">Letter</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- /container --> 
+  </div>
+  <!-- /subnavbar-inner --> 
+</div>
+<br>
+<div id="legend">
+      <legend class="text-primary"><h1><center>EMPLOYEES</center></h1>
+      </legend>
+      </div>
+  
+<!-- <script type="text/javascript">
+</script> -->
+    <a href="">
+      <div class="ui container" id="cont" ng-controller="DetailController" >
+        <div class="ui grid">
+         <div class="five column row">
+          <div class="column" ng-repeat="x in details">
+            <div class="card a" id="{{x.Emp_Id}}" onclick="tend(this.id)"  style="background-color:{{x.color}};">
+              <img src ="photos/tick.png" id="tick_{{x.Emp_Id}}" style="height:30px; visibility:hidden"  width="30px" align="right">
+              <img src="{{x.Photo}}"  alt="Avatar"  class="ava" style="margin-left:30px;">
+              <h4 style="color:black"> {{ x.Emp_Id }}</h4>
+              <p style="color: black">  <a href="payslip1.html">{{ x.Name }}</a></p>
+              <p style="color: black"height: 220px; width: 160px;></p>
+                     </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+</body>
+</html>

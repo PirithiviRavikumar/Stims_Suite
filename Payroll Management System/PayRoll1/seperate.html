@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<head>
+            
+      <title>Pay Roll</title>
+      <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+      <link href="css/main.css" rel="stylesheet">
+ 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="jquery-3.1.1.min.js"></script>
+     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600"
+        rel="stylesheet">
+<link href="css/font-awesome.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/pages/dashboard.css" rel="stylesheet">
+<style type="text/css">
+      td
+      {
+        padding:5px;
+      }
+      .panel-body{
+      	height: 300px;
+      }
+      .panel-body-photo{
+      	height: 100px;
+      	width:100px;
+      }
+      </style>
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
+                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a class="brand" href="index.html">Pay Roll</a>
+      <div class="nav-collapse">
+        <ul class="nav pull-right">
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                            class="icon-cog"></i> Account <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="javascript:;">Settings</a></li>
+              <li><a href="javascript:;">Help</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                            class="icon-user"></i> Sobana <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="javascript:;">Profile</a></li>
+              <li><a href="login.html">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="navbar-search pull-right">
+          <input type="text" class="search-query" placeholder="Search">
+        </form>
+      </div>
+      <!--/.nav-collapse --> 
+    </div>
+    <!-- /container --> 
+  </div>
+  <!-- /navbar-inner --> 
+</div>
+<!-- /navbar -->
+<div class="subnavbar">
+  <div class="subnavbar-inner">
+    <div class="container">
+      <ul class="mainnav">
+        <li class=""><a href="dashboard.html"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
+        <li class="dropdown active"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i><span>Employee</span> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="search.html">Search Employee</a></li>
+            <li><a href="seperate.html">Seprate Employee</a></li>
+            <li><a href="empsrc.html">View Employee</a></li>
+          </ul>
+        </li>
+         <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-money"></i><span>PayRoll</span> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="SalaryCalculation_nev.html">Salary Calculation</a></li>
+            <li><a href="StopPayment_json.html">Stop Payment</a></li>
+            <li><a href="Final_Settelment_nev.html">Final Settelement</a></li>
+            <li><a href="RES_nev.html">Revise Employee Salary</a></li>
+          </ul>
+        </li>
+         <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-list-alt"></i><span>Report</span> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="payslip_nev.html">PaySlip</a></li>
+            <li><a href="consolidatedstatement_js.html">Consolidated  Statement</a></li>
+            <li><a href="newmemo.html">Memo</a></li>
+            <li><a href="newletter.html">Letter</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- /container --> 
+  </div>
+  <!-- /subnavbar-inner --> 
+</div>
+<br\>
+<br\>
+<table width="100%">
+<div>
+<tr>
+  <td>
+  <h2><center>
+  <img src="a.jpg" class="img-circle pull-mid" width="100" height="100"><a>Gunasekar</a></center></h2>
+  </td>
+ </tr>
+</table>
+ <div class="container">
+  <div class="row">
+  <center>
+  <div class="col-md-4">
+  <div class="panel panel-primary">
+  <div class="panel-heading">
+  <ceter><h3 class="panel-title">Resignation Details</h3></ceter>
+ </div>
+ <div class="panel-body">
+ <table width="100%">
+ <div>
+  <tr>
+   <td>Resignation submitted on: </td>
+   <td><input type="text" class="col-md-8" class="form-control" ></td>
+  </tr>
+  </div>
+ 
+  <tr>
+  <td>Reason for Leaving:</td>
+  <td><input type="text" class="col-md-8" class="form-control" ></td>
+  </tr>
+  <tr>
+  <td>Remarks</td>
+  <td><!-- <lable for="remarks">Remarks</lable> -->
+  <textarea class="form-control" rows="5" id="remark"></textarea></td>
+  </tr>
+
+ </table>
+ </div>
+ </div>
+ </div>
+
+<div class="col-md-4">
+  <div class="panel panel-primary">
+  <div class="panel-heading">
+  <ceter><h3 class="panel-title">Exit Details</h3></ceter>
+ </div>
+ <div class="panel-body">
+ <table width="100%">
+ <div>
+  <tr>
+   <td>Leaving Date: </td>
+   <td><input type="text" class="col-md-8" class="form-control" ></td>
+  </tr>
+  </div>
+ 
+  <tr>
+  <td>Settled on:</td>
+  <td><input type="text" class="col-md-8" class="form-control" ></td>
+  </tr>
+  <tr>
+  <td>Remarks</td>
+  <td><!-- <lable for="remarks">Remarks</lable> -->
+  <textarea class="form-control" rows="5" id="remark"></textarea></td>
+  </tr>
+
+ </table>
+ 
+ </div>
+ </div>
+ </div>
+ </center>
+</div>
+</div>
+<center>
+<div class="col-lg-12">
+<table>
+<tr>
+<td>
+<button type="button" class="btn btn-primary form-control" onClick="javascript:ButtonClick();">OK</button>
+</td>
+<td>
+      <a href="separate.html" class="btn btn-primary">Close</a>
+      </td>
+</tr>
+</table>
+</div>
+</center>
+
+</body>
+</html>

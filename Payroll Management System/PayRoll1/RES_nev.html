@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PayRollMagement</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+  <script src="RES_json.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600"
+        rel="stylesheet">
+<link href="css/font-awesome.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/pages/dashboard.css" rel="stylesheet">
+</head>
+<script type="text/javascript">
+	 function res() {
+            
+        
+       var x_Id=document.forms["form"]["name"].value;
+      if(x_Id==""){
+                 alert("Please fill the Employee Name"); 
+                     }
+               else{
+
+                     document.getElementById('res').style.display = "inline";
+                     document.getElementById('details').style.display = "none";
+                     }
+                   }
+</script>
+
+<style>
+   .panel-default {
+    margin-top: 10%;
+    margin-left:500px;
+    width: 50%;
+ }
+ .form-horizontal .control-label {
+    padding-top: 10px;
+    margin-bottom: 0px;
+    text-align: left;
+    margin-left: 130px;
+} 
+
+
+table {
+  font-size: 14px;
+  margin-left: 129px;
+  width: 50%;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+border-left: 1px solid #ddd;
+border-right: 1px solid #ddd;
+
+}
+
+ td, th {
+  padding: 10px;
+}
+
+
+th{
+    text-align: left;
+   padding-left: 10px
+   padding-left:  10px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  
+}
+ 
+
+</style>
+
+<body ng-app="bookApp" ng-controller="bookController">
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
+                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a class="brand" href="#" style="font-size: 24px;">Pay Roll</a>
+      <div class="nav-collapse">
+        <ul class="nav pull-right">
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                            class="icon-cog"></i> Account <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="javascript:;">Settings</a></li>
+              <li><a href="javascript:;">Help</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                            class="icon-user"></i> Pirithivi <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="javascript:;">Profile</a></li>
+              <li><a href="login.html">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!--/.nav-collapse --> 
+    </div>
+    <!-- /container --> 
+  </div>
+  <!-- /navbar-inner --> 
+</div>
+<!-- /navbar -->
+<div class="subnavbar">
+  <div class="subnavbar-inner">
+    <div class="container">
+      <ul class="mainnav">
+        <li class=""><a href="dashboard.html"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
+        <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i><span>Employee</span> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="icons.html">Search Employee</a></li>
+            <li><a href="faq.html">Seprate Employee</a></li>
+            <li><a href="pricing.html">View Employee</a></li>
+          </ul>
+        </li>
+         <li class="dropdown active"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-money"></i><span>PayRoll</span> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="SalaryCalculation_nev.html">Salary Calculation</a></li>
+            <li><a href="StopPayment_json.html">Stop Payment</a></li>
+            <li><a href="Final_Settelment_nev.html">Final Settelement</a></li>
+            <li><a href="#">Revise Employee Salary</a></li>
+          </ul>
+        </li>
+         <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-list-alt"></i><span>Report</span> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="payslip_nev.html">PaySlip</a></li>
+            <li><a href="consolidatestamt.html">Consolidated  Statement</a></li>
+            <li><a href="pricing.html">Memo</a></li>
+            <li><a href="pricing.html">Letter</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- /container --> 
+  </div>
+  <!-- /subnavbar-inner --> 
+</div>
+
+
+ <div class="container-fluid" id="res_form">
+	<div class="row">
+		<div class="col-md-12">
+      <div id="legend">
+             <legend class="text-primary"><h1 style="margin-left: 100px; font-size: 24px; text-align: left;">Revised Empolyee Salary</h1>
+             </legend>
+                   <div class="main-container">
+                      <div class="row gutter">
+                               <form id="details" name="form" method="post" action="" class="form-horizontal">
+                                  <fieldset>
+                                       <div class="form-group row gutter">
+                                          <h2 style="font-size: 18px;    margin-left: 140px;">
+                                               <img src="x.jpg" class="img-circle" width="100" height="100">Search Empolyee Salary</h2>
+                                                 <label class="col-lg-6 control-label " style="font-size: 14px;">Employee ID:</label>
+                                                    <div class="col-lg-2">
+                                                       <input type="text" class="form-control" name="name" placeholder=" Employee ID" ng-model="searchtext">
+                                                    </div>
+                                      </div>
+                                               <div class="form-group row gutter">
+                                                  <label class="col-lg-6 control-label" style="font-size: 14px;">Date of Joining:</label>
+                                                      <div class="col-lg-2">
+                                                          <input type="Date" class="form-control" placeholder="Date of Joining" name="" ng-model="name2">
+                                                      </div>
+                                               </div>
+                                                   <div class="form-group row gutter">
+                                                      <label class="col-lg-6 control-label" style="font-size: 14px;">Experience:</label>
+                                                         <div class="col-lg-2">
+                                                            <input type="text" class="form-control" name="" placeholder="Experience" ng-model="name3">
+                                                         </div>
+                                                   </div>
+                                                    <div class="form-group row gutter">
+                                                       <label class="col-lg-6 control-label" style="font-size: 14px;">Last Permission:</label>
+                                                       <div class="col-lg-2"><input type="text" class="form-control" name="" placeholder="Last Permission" ng-model="name4">
+                                                       </div>
+                                                    </div>
+                                                    <div class="form-group row gutter">
+                                                        <label class="col-lg-6 control-label" style="font-size: 14px;">Designation:</label>
+                                                        <div class="col-lg-2"><input type="text" class="form-control" name="" placeholder="Designation" ng-model="name5">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row gutter">
+                                                         <label class="col-lg-6 control-label" style="font-size: 14px;">Last Revised By:</label>
+                                                          <div class="col-lg-2"><input type="text" class="form-control" placeholder="Last Revised By" name="" ng-model="name6">
+                                                          </div>
+                                                    </div>
+                                                     <div class="form-group row gutter">
+                                                           <label class="col-lg-6 control-label" style="font-size: 14px;">Last Revised:</label>
+                                                           <div class="col-lg-2"><input type="text" class="form-control" placeholder="Last Revised" name="" ng-model="name7">
+                                                           </div>
+                                                     </div>
+                                  </fieldset>
+                                       <div class="form-group row gutter">
+                                          <div class="col-lg-6 col-lg-offset-6"><input type="button"  class="btn btn-primary " style="margin-left: -470px; background-color: #2e6da4"  onclick="res()" value="Proceed" />
+                                          </div>
+                                        </div>
+                             </form>
+                         
+                    
+                          
+                                 <div id="res" style="display: none">  
+                                    
+                                        
+                                              <form id="defaultForm" method="post" class="form-horizontal">
+                                                 <fieldset>
+
+                                                        <table>
+                                                           <thead>
+                                                           
+                                                                <tr >
+                                                                   <th>Salary</th>
+                                                                   <th>Current Salary</th>
+                                                                   <th>Revied Salary</th>
+                                                                   <th>Revised(%)</th>
+                                                                 </tr>
+                                                                <tr ng-repeat="rx in res  |filter: searchtext ">
+                                                                        <td>{{rx.fullbasic}}</td>
+                                                                        <td id="td01">{{rx.fb_cs}}</td>
+                                                                        <td id="td02">{{rx.fb_rs}}</td>
+                                                                        <td id="td03">{{rx.fb_r}}</td>
+                                                                </tr>
+                                                                 <tr ng-repeat="rx in res  |filter: searchtext ">
+                                                                        <td>{{rx.fullda}}</td>
+                                                                        <td id="td04">{{rx.fh_cs}}</td>
+                                                                        <td id="td05">{{rx.fh_rs}}</td>
+                                                                        <td id="td06">{{rx.fh_r}}</td>
+                                                                 </tr>
+                                                                  <tr ng-repeat="rx in res   |filter: searchtext">
+                                                                         <td>{{rx.fullhra}}</td>
+                                                                         <td id="td07">{{rx.da_cs}}</td>
+                                                                         <td id="td08">{{rx.da_rs}}</td>
+                                                                         <td id="td09">{{rx.da_r}}</td>
+                                                                   </tr>
+                                                                   <tr ng-repeat="rx in res  |filter: searchtext ">
+                                                                         <td>{{rx.fullpf}}</td>
+                                                                         <td id="td10">{{rx.pf_cs}}</td>
+                                                                         <td id="td11">{{rx.pf_rs}}</td>
+                                                                         <td id="td12">{{rx.pf_r}}</td>
+                                                                   </tr>
+                                                                   <tr ng-repeat="rx in res  |filter: searchtext ">
+                                                                         <td>{{rx.fullesi}}</td>
+                                                                         <td id="td13">{{rx.esi_cs}}</td>
+                                                                         <td id="td14">{{rx.esi_rs}}</td>
+                                                                         <td id="td15">{{rx.esi_r}}</td>
+                                                                   </tr>
+                                                                   <tr ng-repeat="rx in res   |filter: searchtext">
+                                                                         <td>{{rx.totalamunt}}</td>
+                                                                         <td id="td14">{{rx.ta_cs}}</td>
+                                                                         <td id="td15">{{rx.ta_rs}}</td>
+                                                                         <td id="td 16">{{rx.esi_r}}</td>
+                                                                   </tr>
+                                                                    <!-- <tr ng-repeat="rx in res   |filter: searchtext">  
+
+                                                                          <td colspan="4">
+                                                                           <div class="form-group row gutter">
+                                                                            <label class="control-label">{{rx.effetivefroms}}</label>
+
+                                                                                  <div class="col-lg-6">
+                                                                                      <input type="text" class="form-control" placeholder="" name="">
+
+                                                                                          <label class="control-label">{{rx.note}}                            </label>
+                                                                                 </div>
+                                                                            </div>
+                                                                          </td>
+                                                                     </tr> -->
+                                                           </thead>
+                                                       </table>
+                                                   </fieldset>
+                                                 </form>
+                                                                      
+                                           <div class="form-group no-margin">
+                                              <div class="row gutter">
+                                                        <div class="col-md-4"><button type="submit"  style="     margin-left: 331px; margin-left: 314; background-color: #2e6da4" class="btn btn-primary">Save</button></div>
+                                                            <div class="col-md-4"><button type="submit" style="margin-left: 10px; background-color: #2e6da4"
+                                                             class="btn btn-primary">Cancel</button></div>
+                                               </div>
+                                          </div>
+                                   
+                                  </div>
+                                           
+             </div>
+        </div>
+  </div>
+</body>
+</html>

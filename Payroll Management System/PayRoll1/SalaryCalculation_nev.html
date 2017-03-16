@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>PayRollMagement</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600"
+        rel="stylesheet">
+<link href="css/font-awesome.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/pages/dashboard.css" rel="stylesheet">
+ 
+<script type="salary.js"></script>
+
+<link src="css/custom-navbar.css" rel="stylesheet">
+</head>
+
+<script type="text/javascript">
+	$.getScript('http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js',function(){
+$.getScript('http://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.0/morris.min.js',function(){
+		
+ Morris.Donut({
+        element: 'donut-example',
+        data: [
+         {label: "Calculated", value: 60},
+         {label: "Pending", value: 30},
+         {label: "Other", value: 10}
+        ]
+      });
+
+});
+});
+
+	</script>
+	<style type="text/css">
+		.morris-hover{position:absolute;z-index:1000}
+.morris-hover.morris-default-style{border-radius:10px;padding:6px;color:#666;background:rgba(255,255,255,0.8);
+border:solid 2px rgba(230,230,230,0.8);
+font-family:sans-serif;
+font-size:12px;
+text-align:center
+    
+}.morris-hover.morris-default-style .morris-hover-row-label
+{font-weight:bold;
+margin:0.25em 0}
+.morris-hover.morris-default-style .morris-hover-point
+{white-space:nowrap;margin:0.1em 0}
+	</style>
+<style type="text/css">
+	.img-circle{
+    width: 140px;
+    height: 140px;
+	}
+	.form-control{
+		width: 60%;
+	}
+</style>
+
+
+<body ng-app="myApp">
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
+                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a class="brand" href="#" style="font-size: 24px;">Pay Roll</a>
+      <div class="nav-collapse">
+        <ul class="nav pull-right">
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                            class="icon-cog"></i> Account <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="javascript:;">Settings</a></li>
+              <li><a href="javascript:;">Help</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                            class="icon-user"></i> Pirithivi <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="javascript:;">Profile</a></li>
+              <li><a href="login.html">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!--/.nav-collapse --> 
+    </div>
+    <!-- /container --> 
+  </div>
+  <!-- /navbar-inner --> 
+</div>
+<!-- /navbar -->
+<div class="subnavbar">
+  <div class="subnavbar-inner">
+    <div class="container">
+      <ul class="mainnav">
+        <li class=""><a href="dashboard.html"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
+        <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i><span>Employee</span> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+           <li><a href="empsrc.html">View Employee</a></li>
+            <li><a href="search.html">Search Employee</a></li>
+            <li><a href="seperate.html">Seprate Employee</a></li>
+          </ul>
+        </li>
+         <li class="dropdown active"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-money"></i><span>PayRoll</span> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Salary Calculation</a></li>
+            <li><a href="StopPayment_json.html">Stop Payment</a></li>
+            <li><a href="Final_Settelment_nev.html">Final Settelement</a></li>
+            <li><a href="RES_nev.html">Revise Employee Salary</a></li>
+          </ul>
+        </li>
+         <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-list-alt"></i><span>Report</span> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+                        <li><a href="payslip_nev.html">PaySlip</a></li>
+            <li><a href="consolidatestamt.html">Consolidated  Statement</a></li>
+            <li><a href="newmemo.html">Memo</a></li>
+            <li><a href="newletter.html">Letter</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- /container --> 
+  </div>
+  <!-- /subnavbar-inner --> 
+</div>
+<!-- /subnavbar -->
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+        <!-- SalaryCalculation -->
+			<div id="SalaryCalculation">
+	<div id="legend">
+        <legend class="text-primary">
+            <h1 style="font-size: 24px; text-align: center;">Salary Calculation</h1>
+        </legend>
+     </div>
+			<div class="row">
+			
+				<div class="col-md-6">
+					<form role="form">
+						<div class="form-group">
+							 
+							<label  style="margin-left: 115px;;">
+							Grade
+							</label>
+							<input type="email" class="form-control" id="exampleInputEmail1" style="margin-left: 150px;" />
+						</div>
+						<div class="form-group">
+							 
+							<label style="margin-left:115px;" for="exampleInputPassword1">
+							Designation
+							</label>
+							<input type="text" class="form-control" id="exampleInputPassword1"  style="margin-left: 150px;" />
+						</div>
+						
+					
+						<button type="submit" class="btn btn-primary" onclick="Salary_cal()" style="margin-left: 200px; background-color:#2e6da4">
+						Calculate
+						</button>
+					</form>
+
+					
+					<!-- <div id="info" style="display: none;">
+					<div class="col-md-4">
+					<div class="alert alert-dismissable alert-info">
+					
+						 
+						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+							×
+						</button>
+						<h4>
+							Salary Basic Info!
+						</h4> <strong></strong> hra:4%
+						<br>Esi:3%
+						<br>Pf:2%
+						 <a href="#" class="alert-link"></a>
+					</div>
+					</div>
+					</div> -->
+				</div> 
+
+				<div class="pull-right">
+							<div class="container">
+						
+							<div id="donut-example" style="height:250px;margin-left: 600px;margin-top: -200px;"></div>
+							
+							</div>
+					</div>
+			</div>
+            <style type="text/css">
+				.col-md-2 {
+					    width: 12.1%;
+					}
+			</style>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="row" >
+						<div class="col-md-2" style="margin-left: 130px;">
+							<div style="text-align: center;" >
+							<a href="#">
+								 <img class="img" id="option " src="correct.jpg" alt="Submit" width="20" height="20" style="float:right;">
+								 </a>
+								 <img class="img-circle" img src="x.jpg" />
+								<div class="caption">
+									<h4>
+										Dhnusiya.P
+										<br>13IT001
+									</h4>
+									
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-md-2" id="card">
+							<div  style="text-align: center;">
+							<a href="#">
+								 <img class="img" id="option " src="correct2.png" alt="Submit" width="20" height="20" style="float: right">
+								 </a>
+								 <img class="img-circle" img src="x.jpg" />
+								<div class="caption">
+									<h4>
+										Dharani.AR
+										<br>13It002
+									</h4>
+									
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-2">
+							<div style="text-align: center;">
+							<a href="#">
+								 <img class="img" id="option " src="correct.jpg" alt="Submit" width="20" height="20" style="float: right">
+								 </a>
+								 <img class="img-circle" img src="x.jpg" />
+								<div class="caption">
+									<h4>
+										Dharani.P
+										<br>13It003
+									</h4>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="col-md-2">
+							<div style="text-align: center;">
+							<a href="#">
+								 <img class="img" id="option " src="correct2.png" alt="Submit" width="20" height="20" style="float: right">
+								 </a>
+								 <img class="img-circle" img src="x.jpg" />
+								<div class="caption">
+									<h4>
+										Dhivya.S
+										<br>13It004
+									</h4>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="col-md-2">
+							<div style="text-align: center;">
+							<a href="#">
+								 <img class="img" id="option " src="correct2.png" alt="Submit" width="20" height="20" style="float: right">
+								 </a>
+								 <img class="img-circle" img src="x.jpg" />
+								<div class="caption">
+									<h4>
+										Gugapriya.R
+										<br>13It005
+									</h4>
+									
+								</div>
+							</div>
+						</div>
+
+
+						<div class="col-md-2">
+							<div style="text-align: center;">
+							<a href="#">
+								 <img class="img" id="option " src="correct.jpg" alt="Submit" width="20" height="20" style="float: right">
+								 </a>
+								 <img class="img-circle" img src="x.jpg" />
+								<div class="caption">
+									<h4>Hemalatha.P
+										
+										<br>13It006
+									</h4>
+									
+								</div>
+							</div>
+						</div>
+
+
+						<div class="col-md-2">
+						<div  style="text-align: center;">
+							<h2></h2>
+							<h3></h3>
+								<a href="index.html">
+
+								 <img class="img-circle" img src="more.png" style="margin-top: 20px;"  height="80" width="80"  />
+								<div class="caption"></a>
+									<h4>
+										more	
+									</h4>
+					</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+<link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+<script src="https://cdn.jsdelivr.net/sweetalert2/6.4.3/sweetalert2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/sweetalert2/6.4.3/sweetalert2.min.css">
+
+	<script >
+function Salary_cal()
+   {  
+  
+          swal("Salary!", "Calculate Successfully!", "success")
+    }    
+  
+      </script>
+	
+	</body>
+	</html>

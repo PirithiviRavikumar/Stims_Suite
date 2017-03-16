@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600"
+        rel="stylesheet">
+<link href="css/font-awesome.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/pages/dashboard.css" rel="stylesheet">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Card View</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
+    
+    <script src="control.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+
+
+</script>
+</head>
+<body ng-app="myApp">
+  <style type="text/css">
+          .card {
+
+        margin:25px 25px 25px 25px;
+        text-align: center;
+        font-weight: bold; 
+        color:white;
+        min-height:155px;
+        box-shadow: 0 8px 16px 0 rgba( 0,0,0,0.2);   
+        background-color:#00c2cc;               
+        transition: 0.3s;
+        width: 150px;
+        border-radius: 15px;
+        backface-visibility:hidden;
+        padding: 0px;
+        position: relative;
+        overflow: hidden;
+      
+
+      }
+
+
+  .card img
+  {
+
+         z-index: 4;
+    }
+
+ .card .caption{
+
+          position:absolute;
+          top:170px;
+          -webkit-transition:all 0.3s ease-in-out;
+          -moz-transition:all 0.3s ease-in-out;
+          -o-transition:all 0.3s ease-in-out;
+          -ms-transition:all 0.3s ease-in-out;
+          transition:all 0.3s ease-in-out;
+          width:100%;
+
+    }
+         
+  .caption .blur
+  {
+          background-color: rgba(0,0,0,0.7);
+          height: 300px;
+          z-index: 5;
+          position: absolute;
+          width: 100%;
+    }
+       
+ .card .caption-text
+ {
+          z-index: 10;
+          color: #fff;
+          position: absolute;
+          height: 300px;
+          text-align: center;
+           color:white;
+          top:-1px;
+          width: 100%;
+
+   }
+
+   .ava{
+     margin: 32px 0px 7px 16px;
+     width:60px;
+     height: 60px;
+border-radius:450px 50px 500px 500px;
+   }
+     </style>
+
+  <style type="text/css">
+
+ 
+  .container1 {
+    padding: 2px 16px;
+    }
+img
+{
+  padding-right: 2px;
+  text-align:center;
+  float: center;
+}
+
+.panel-default {
+    margin-top: 10%;
+    margin-left:400px;
+    width: 50%;
+ }
+ .form-horizontal .control-label {
+    padding-top: 10px;
+    margin-bottom: 0px;
+    text-align: right;
+} 
+
+  .container1  {
+  text-align: left;
+  overflow: hidden;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.container1 td, .container1 th {
+  padding: 10px;
+}
+
+.container1 td:first-child, .container1 th:first-child {
+  padding-left: 20px;
+}
+.container1 th{
+    text-align: left;
+   padding-left: 10px
+   padding-left:  10px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  
+}
+.container1 h2,h3
+{
+  text-align:center;
+}
+
+</style>
+<body><!--/.nav-collapse --> 
+    </div>
+    <!-- /container --> 
+  </div>
+  <!-- /navbar-inner --> 
+</div>
+<!-- /navbar -->
+<div class="subnavbar">
+  <div class="subnavbar-inner">
+    <div class="container">
+      <ul class="mainnav">
+        <li class=""><a href="#"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
+        <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i><span>Employee</span> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="empsrc.html">View Employee</a></li>
+            <li><a href="search.html">Search Employee</a></li>
+            <li><a href="seperate.html">Seprate Employee</a></li>
+          </ul>
+        </li>
+         <li class="dropdown active"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-money"></i><span>PayRoll</span> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+             <li><a href="SalaryCalculation_nev.html">Salary Calculation</a></li>
+            <li><a href="StopPayment_json.html">Stop Payment</a></li>
+            <li><a href="Final_Settelment_nev.html">Final Settelement</a></li>
+            <li><a href="RES_nev.html">Revise Employee Salary</a></li>
+          </ul>
+        </li>
+         <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-list-alt"></i><span>Report</span> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+           <li><a href="payslip_nev.html">PaySlip</a></li>
+            <li><a href="consolidatestamt.html">Consolidated  Statement</a></li>
+            <li><a href="newmemo.html">Memo</a></li>
+            <li><a href="newletter.html">Letter</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- /container --> 
+  </div>
+  <!-- /subnavbar-inner --> 
+</div>
+<!-- /subnavbar -->
+
+
+
+
+
+
+  <a href="">
+            <div class="ui container" id="cont" ng-controller="DetailController" >
+                <img class="img-circle" src="arrowleft.jpg" onclick="javascript:window.history.go(-1);" style="width: 40px;height: 40px;">
+  </a>
+  <a href="">
+              <img  class="img-circle" src="arrowright.jpg" style="float: right; width: 35px; height: 35px;" onclick="javascript:window.history.go(1);" style="width: 30px;height: 30px;">
+  </a>
+
+
+    
+            <div class="ui grid">
+                <div class="five column row">
+                    <div class="column" ng-repeat="x in details">
+                          <div class="card a" id=card   style="background-color:{{x.color}};">
+                          <a   data-toggle="modal" data-target="#myModal" style="text-decoration: none;">
+                                 <img ng-src ="{{x.imgs}}" id="poto"  alt="Avatar"  style="height:30px;"  width="30px" align="right">
+                              
+                                    <img ng-src="{{x.Photo}}"  alt="Avatar"  class="ava" style="margin-left:30px;">
+
+                                        <h4 style="color:black"> {{ x.Reg_No }}</h4>
+                                           <p style="color: black">{{ x.Name }}</p>
+                                            <p style="color: black"height: 220px;width: 160px;>{{ x.Department}}</p>
+                             </a>
+                          </div>
+      <div class="modal fade" id="myModal" role="dialog" style="    margin-left: 300px;">
+    <div class="modal-dialog" >
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Salary Details</h4>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+        <div id="EmployeeCard">
+        <div class="card1">
+  <img src="x.jpg" style="height: 125px;
+    width: 133px; margin-left:186px;">
+  </img>
+<div class="container1">
+  <h4 style="margin-left:190px;"><p id="emp01">13IT001</p>
+   <p id="emp02">Dhanusiya.P</p>
+   <p id="emp03">400000</p>
+  </h4>
+<table style=" margin-left: 130px;">
+   <thead>
+   <tr>
+   <td id="emp04">Desingation:</td>
+   <td id="emp05">HOD</td>
+   </tr>
+   <tr>
+   <td id="emp06">Basic Salary:</td>
+   <td id="emp07">400000</td>
+   </tr>
+<tr>
+  <td id="emp08">ExtraDays</td>
+  <td id="emp09">5</td>
+</tr>
+<tr>
+  <td id="emp10">Attendance</td>
+  <td id="emp11">100%</td>
+</tr>
+<tr>
+  <td id="emp12">Decation</td>
+  <td id="emp13">500</td>
+</tr>
+<tr>
+  <td id="emp14">Status</td>
+  <td id="emp15">Completed</td>
+</tr>
+ </thead>
+</table>
+  </div>
+</div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+               </div>
+          </div>
+          <!-- Modal -->
+
+      
+    </div>
+  </div>
+
+</body>
+</html>
